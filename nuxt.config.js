@@ -9,12 +9,11 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - eCommerce',
     title: 'eCommerce',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'eCommerce Website' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -23,8 +22,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: ["~/assets/main.css", "@sweetalert2/theme-material-ui"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -45,7 +43,14 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    'vue-sweetalert2/nuxt/no-css',
+    'nuxt-webfontloader',
   ],
+  webfontloader: {
+    google: {
+      families: ['DM+Sans:wght@400;500;700&display=swap'],
+    },
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -60,18 +65,36 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    threeShake: true,
+    defaultAssets: {
+      font: {
+        family: "DM Sans",
+        size: 15,
+      },
+    },
     theme: {
-      dark: true,
+      light: true,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
+        light: {
+          primary: colors.deepPurple.darken1,
+          bg: '#ffff',
+          surface: '#ffff',
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
-        }
+        },
+        light: {
+          primary: colors.deepPurple.darken1,
+          bg: '#0a0514',
+          surface: '#130a24',
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        },
       }
     }
   },
