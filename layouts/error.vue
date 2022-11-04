@@ -1,42 +1,41 @@
 <template>
   <v-app dark>
-   <v-container class="fill-height">
-    <v-row justify="center">
-      <v-col cols="10">
-        <h1>Oooops!</h1>
-        <p>ALgo deu errado aqui!</p>
-        <p class="red--text">Error : {{error.message}}</p>
-        <v-btn nuxt to="/" color="primary" class="text-capitalize">Home</v-btn>
-      </v-col>
-    </v-row>
-   </v-container>
+    <v-container class="fill-height">
+      <v-row justify="center">
+        <v-col cols="10">
+          <h1>Ooops</h1>
+          <p>Tem algo de errado aqui...</p>
+          <p class="red--text">Error : {{ error.message }}</p>
+          <v-btn nuxt to="/" class="text-capitalize">Volte para Home</v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'EmptyLayout',
-  layout: 'empty',
+  layout: "none",
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
-  data () {
+  data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
-    }
+      pageNotFound: "404 Not Found",
+      otherError: "An error occurred",
+    };
   },
-  head () {
+  head() {
     const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+      this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
     return {
-      title
-    }
-  }
-}
+      title,
+    };
+  },
+};
 </script>
 
 <style scoped>
