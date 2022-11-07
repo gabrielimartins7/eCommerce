@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nav />
+    <HomeCarousel :sale_items="sale_items"/>
     <Footer />
   </div>
 </template>
