@@ -2,6 +2,12 @@
   <div>
     <Nav />
     <HomeCarousel :sale_items="sale_items"/>
+    <br/><br/>
+    <v-container>
+      <h1 class="text-md-h5 text-h6">Check these out</h1>
+      <br/>
+      <ProductSlider :products="products" />
+    </v-container>
     <Footer />
   </div>
 </template>

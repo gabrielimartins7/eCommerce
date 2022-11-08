@@ -27,7 +27,7 @@
                 {{p.description}}
               </p>
               <v-btn depressed color="primary" class="text-capitalize" min-height="40">
-                Confira
+                Check It Out
               </v-btn>
               </div>
             </v-col>
