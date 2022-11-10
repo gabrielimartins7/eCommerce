@@ -7,13 +7,17 @@
       <h1 class="text-md-h5 text-h6">Check these out</h1>
       <br/>
       <ProductSlider :products="products" />
+      <br/><br/><br/>
+      <Newsletter />
     </v-container>
     <Footer />
   </div>
 </template>
 
 <script>
+import Newsletter from '~/components/Newsletter.vue';
 export default {
+  components: { Newsletter },
   async created(){
     this.sale_items = await this.$content('products').where({onSale: true}).fetch();
     this.products = await this.$content('products').fetch();
