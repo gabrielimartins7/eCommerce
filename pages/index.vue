@@ -11,6 +11,7 @@
       <Newsletter />
     </v-container>
     <Footer />
+    <ScrollTop />
   </div>
 </template>
 
