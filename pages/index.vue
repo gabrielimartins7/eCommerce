@@ -16,9 +16,7 @@
 </template>
 
 <script>
-import Newsletter from '~/components/Newsletter.vue';
 export default {
-  components: { Newsletter },
   async created(){
     this.sale_items = await this.$content('products').where({onSale: true}).fetch();
     this.products = await this.$content('products').fetch();
